@@ -1,0 +1,32 @@
+[
+  {
+    "ticker": "AUTX",
+    "quantity": 15,
+    "purchase_price": 141.71,
+    "current_price": 141.71
+  },
+  {
+    "ticker": "CASH",
+    "quantity": 962,
+    "purchase_price": 1.0,
+    "current_price": null
+  },
+  {
+    "ticker": "EVGO",
+    "quantity": 10,
+    "purchase_price": 177.67,
+    "current_price": 177.67
+  },
+  {
+    "ticker": "HOMR",
+    "quantity": 1,
+    "purchase_price": 78.42,
+    "current_price": 78.42
+  },
+  {
+    "ticker": "MEDC",
+    "quantity": 1,
+    "purchase_price": 57.14,
+    "current_price": 57.14
+  }
+]

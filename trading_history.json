@@ -1,0 +1,240 @@
+[
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 180.0,
+    "current_price": 182.5,
+    "pnl": 25.0
+  },
+  {
+    "ticker": "AAPL",
+    "action": "SELL",
+    "quantity": 10,
+    "purchase_price": 10.0,
+    "current_price": 182.5,
+    "pnl": 1725.0
+  },
+  {
+    "ai_recommendations": [
+      {
+        "action": "STAY",
+        "ticker": "AUTX",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "CASH",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "EVGO",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "HOMR",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "MEDC",
+        "quantity": 0
+      }
+    ],
+    "rationale": "Fallback STAY for all positions."
+  },
+  {
+    "ai_recommendations": [
+      {
+        "action": "STAY",
+        "ticker": "AUTX",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "CASH",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "EVGO",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "HOMR",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "MEDC",
+        "quantity": 0
+      }
+    ],
+    "rationale": "Fallback STAY for all positions."
+  },
+  {
+    "ai_recommendations": [
+      {
+        "action": "STAY",
+        "ticker": "AUTX",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "CASH",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "EVGO",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "HOMR",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "MEDC",
+        "quantity": 0
+      }
+    ],
+    "rationale": "Fallback STAY for all positions."
+  },
+  {
+    "ai_recommendations": [
+      {
+        "action": "STAY",
+        "ticker": "AUTX",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "CASH",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "EVGO",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "HOMR",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "MEDC",
+        "quantity": 0
+      }
+    ],
+    "rationale": "Fallback: STAY on all positions because AI was unavailable."
+  },
+  {
+    "ai_recommendations": [
+      {
+        "action": "STAY",
+        "ticker": "AUTX",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "CASH",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "EVGO",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "HOMR",
+        "quantity": 0
+      },
+      {
+        "action": "STAY",
+        "ticker": "MEDC",
+        "quantity": 0
+      }
+    ],
+    "rationale": "Fallback: STAY on all positions because AI was unavailable."
+  }
+]
