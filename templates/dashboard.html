@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Strategy AI Agent Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f5f5f7;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .section {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    .pill-sell {
+      background-color: #ffe5e5;
+      color: #b00020;
+    }
+    .pill-profit {
+      background-color: #e4fbe4;
+      color: #1b5e20;
+    }
+    .pill-loss {
+      background-color: #ffe5e5;
+      color: #b00020;
+    }
+    .empty {
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Strategy AI Agent Dashboard</h1>
+
+  <div class="section">
+    <h2>Current Positions</h2>
+    {% if positions %}
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Current Price</th>
+            <th>Unrealized P&L</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in positions %}
+            {% set qty = p.quantity or p["quantity"] %}
+            {% set purchase = p.purchase_price or p["purchase_price"] %}
+            {% set current = p.current_price if p.current_price is not none else p.get("current_price") %}
+            {% if current is not none %}
+              {% set pnl = (current - purchase) * qty %}
+            {% else %}
+              {% set pnl = None %}
+            {% endif %}
+            <tr>
+              <td>{{ p.ticker or p["ticker"] }}</td>
+              <td>{{ qty }}</td>
+              <td>{{ "%.2f"|format(purchase) }}</td>
+              <td>
+                {% if current is not none %}
+                  {{ "%.2f"|format(current) }}
+                {% else %}
+                  <span class="empty">N/A</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if pnl is not none %}
+                  {% if pnl >= 0 %}
+                    <span class="pill pill-profit">+{{ "%.2f"|format(pnl) }}</span>
+                  {% else %}
+                    <span class="pill pill-loss">{{ "%.2f"|format(pnl) }}</span>
+                  {% endif %}
+                {% else %}
+                  <span class="empty">N/A</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">No positions recorded yet. Send a /tick to populate this table.</p>
+    {% endif %}
+  </div>
+
+  <div class="section">
+    <h2>Trading History (SELL decisions)</h2>
+    {% if trades %}
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Action</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Current Price</th>
+            <th>Realized P&L</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for t in trades %}
+            <tr>
+              <td>{{ t.ticker or t["ticker"] }}</td>
+              <td><span class="pill pill-sell">{{ t.action or t["action"] }}</span></td>
+              <td>{{ t.quantity or t["quantity"] }}</td>
+              <td>{{ "%.2f"|format(t.purchase_price or t["purchase_price"]) }}</td>
+              <td>{{ "%.2f"|format(t.current_price or t["current_price"]) }}</td>
+              <td>
+                {% set pnl = t.pnl or t["pnl"] %}
+                {% if pnl >= 0 %}
+                  <span class="pill pill-profit">+{{ "%.2f"|format(pnl) }}</span>
+                {% else %}
+                  <span class="pill pill-loss">{{ "%.2f"|format(pnl) }}</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">No SELL trades logged yet. Increase current prices in your /tick payload to trigger SELL entries.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
